@@ -11,6 +11,7 @@ class ExtractsController {
         require_once('../Model/ExtractsModel.php');
         
         $index = new indexModel();
+        
         return $index->execute();
     }
 }

@@ -1,37 +1,34 @@
 <?php
 
-// 将来的にはmysqlの接続関数はクラス化して継承することが好ましいかも
+require_once('mysql.php');
 
 // データベースに記事を挿入するclass
-class indexModel{
+class indexModel extends MySQL{
 
 	public function __construct() {
-        require_once('../config.php');
-        require_once('mysql.php');
+
 	}
     
-    private function fetchTables() {
-        
-		$dbh = connectDB();
-
-		$sql = "show tables from ".DB_NAME;
-		$stmt = $dbh->prepare($sql);
-
-		$stmt->execute();
-        
-        return $stmt->fetchAll();
-    }
-    
 	public function execute(){
+    
+        $dbh = $this->connectDB();
         
-        $tables = fetchTables();
+        $tables = $this->fetchTables();
         
-        $dbh = connectDB();
+        foreach($tables as $tableName){
         
-        foreach
-        $sql = "select id, title, created from ".$tables;
+            $sql = "select id, title, created from ".$tableName["Tables_in_".DB_NAME];
+            $stmt = $dbh->prepare($sql);
+            
+            $stmt->execute();
+            
+            $table_list[$tableName["Tables_in_".DB_NAME]] = $stmt->fetchAll();        
+        }
+        
+        $dbh = null;
+        
+        return $table_list;
     }
 }
-
 
 ?>

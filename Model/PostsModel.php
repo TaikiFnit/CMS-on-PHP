@@ -1,7 +1,9 @@
 <?php
 
+require_once('mysql.php');
+
 // データベースに記事を挿入するclass
-class add {
+class add extends MySQL{
 	private $title;
 	private $content;
 
@@ -11,11 +13,10 @@ class add {
 	}
     
 	public function execute(){
-		require_once('mysql.php');
 
-		$dbh = connectDB();
+		$dbh = $this->connectDB();
 
-		$sql = "insert into news(title, content, created, modified) values(:title, :content, now(), now())";
+		$sql = "insert into news2(title, content, created, modified) values(:title, :content, now(), now())";
 		$stmt = $dbh->prepare($sql);
 		$params = array(
 			":title" => $this->title,
