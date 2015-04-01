@@ -1,14 +1,15 @@
 <?php
 
+require_once('../Model/ExtractsModel.php');
+
 class ExtractsController {
     
     public function __construct() {
         
     }
     
+    // 記事の一覧を引っ張ってきてそれを返す
     public function index() {
-        // 記事の一覧を引っ張ってきてそれを返す
-        require_once('../Model/ExtractsModel.php');
         
         $index = new indexModel();
         
