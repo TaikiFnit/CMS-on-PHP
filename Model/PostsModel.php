@@ -23,6 +23,8 @@ class add {
 		);
 
 		$stmt->execute($params);
+        
+        $dbh = null;
     }
 }
 

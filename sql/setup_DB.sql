@@ -1,4 +1,4 @@
 create database CMS;
 use CMS;
-grant all on CMS.* to user_name@localhost;
-set password for user_name@localhost=password('user_password');
+grant all on CMS.* to cms_user@localhost;
+set password for cms_user@localhost=password('cms_password');

@@ -1,7 +1,10 @@
 <?php
 
-$newslist[][];
+require_once('../Controller/ExtractsController.php');
 
+$controller = new ExtractsController();
+
+echo $controller->index();
 
 ?>
 <!DOCTYPE html>
