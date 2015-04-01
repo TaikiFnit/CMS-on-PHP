@@ -1,3 +1,9 @@
+<?php
+
+$newslist[][];
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>

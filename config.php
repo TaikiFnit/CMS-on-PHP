@@ -1,6 +1,7 @@
 <?php
 
-define('DSN', 'mysql:host=localhost;dbname=CMS');
+define('DB_NAME', 'CMS');
+define('DSN', 'mysql:host=localhost;dbname='.DB_NAME);
 define('DB_USER', 'cms_user');
 define('DB_PASSWORD', 'cms_password');
 
