@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Control Panel</title>        
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="components/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="stylesheets/control_style.css">
+    <link rel="stylesheet" href="components/bootstrap/css/bootstrap.min.css">
+</head>
+<body id="body">
+    
+    <header id="header">
+        <h1 class="clear">IRC Control Panel</h1>
+    </header>
+    
+    <main role="main" class="container">
+        <div class="row">
+                        
+            <section id="news_index" class="col-sm-3">
+                <h2>記事一覧</h2>
+                <div id="accordion">
+                    <h3>2015年</h3>
+                    <ul>
+                    <li>05 - 04/21</li>
+                    <li>04 - 04/20</li>
+                    <li>03 - 04/11</li>
+                    <li>02 - 04/04</li>
+                    <li>01 - 04/01</li>
+                    </ul>
+                    <h3>2014年</h3>
+                    <ul>
+                    <li>05 - 04/21</li>
+                    <li>04 - 04/20</li>
+                    <li>03 - 04/11</li>
+                    <li>02 - 04/04</li>
+                    <li>01 - 04/01</li>
+                    </ul>
+                    <h3>2013年</h3>
+                    <ul>
+                    <li>05 - 04/21</li>
+                    <li>04 - 04/20</li>
+                    <li>03 - 04/11</li>
+                    <li>02 - 04/04</li>
+                    <li>01 - 04/01</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="col-sm-9">
+                <h1>Edit</h1>
+
+                <form action="http://localhost/control/Controller/PostsController.php" method="POST" class="">
+                    <div class="form-group">
+                        <label class="control-label" for="formTitle">Title:</label>
+                        <input type="text" name="title" id="formTitle" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="formContent">Content:</label>
+                        <textarea name="content" id="formContent" class="form-control" rows="10"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden" name="action" value="add">
+                        <input type="submit" value="Send!" class="btn btn-primary">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script src="components/jquery/jquery.js"></script>
+    <script src="components/jquery-ui/jquery-ui.js"></script>
+    <script src="components/bootstrap/js/bootstrap.js"></script>
+    <script src="javascripts/control_script.js"></script>
+</body>
+</html>
