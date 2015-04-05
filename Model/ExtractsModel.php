@@ -17,7 +17,7 @@ class indexModel extends MySQL{
         
         foreach($tables as $tableName){
         
-            $sql = "select id, title, created from ".$tableName["Tables_in_".DB_NAME];
+            $sql = "select id, title, author, created from `".$tableName["Tables_in_".DB_NAME]."`";
             $stmt = $dbh->prepare($sql);
             
             $stmt->execute();

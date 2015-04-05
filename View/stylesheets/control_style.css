@@ -1,11 +1,13 @@
 @charset "utf-8";
 
-*{
-    margin: 0;
-    padding: 0;
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2") format("woff2"), url("https://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff") format("woff");
 }
 
-.clear{
+*{
     margin: 0;
     padding: 0;
 }
@@ -16,6 +18,10 @@ html, body{
 
 #body{
     background-color: #e8f0f5;
+}
+
+#header a{
+    text-decoration: none;
 }
 
 ul, ol{
@@ -29,31 +35,131 @@ img{
 header{
     width: 100%;
     height: 30px;
+    margin-bottom: 30px;
     color: white;
+}
+
+#header .navbar{
+    min-height: 30px;
+    height: 30px;
     background: #2980b9;
 }
 
-#header h1{
-    width: 100%;
-    height: 100%;
-    font-size: 18px;
-    line-height: 30px;
-    text-align: center;
+#header div.container{
+    padding: 0;
 }
 
-section#news_index ul, section#news_index ul li {
-    width: 100%;
+#header h1{
+    display: inline-block;
+    font-size: 18px;
+    line-height: 30px;
     margin: 0;
     padding: 0;
 }
 
-section#news_index ul li{
-    border-bottom: 1px solid #cecece;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
+#header a{
+    color: #fff;   
 }
 
-section#news_index ul li:last-child{
-    border-bottom: none;   
+#header a:hover{
+    opacity: 0.8;   
 }
+
+#header .row{
+    margin: 0;
+    padding: 0;
+}
+
+#header div.icon-div{
+    text-align: right;
+}
+
+#header div.icon-div a{
+    margin-left: 10px;   
+}
+
+#header span{
+    padding-top: 3px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+/* nav */
+
+div.side div.user{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    background: white;
+    border: 1px solid #D6E3EA;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+div.side nav  {
+    width: 100%;
+    margin-bottom: 30px;
+    border-top: 1px solid #D6E3EA; 
+}
+
+div.side nav ul li{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #D6E3EA;
+}
+
+div.side nav ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #93a6c0;
+    padding-left: 10px;
+}
+
+div.side nav ul li a:hover{
+    background-color: white;   
+}
+
+div.side nav ul li span{
+    padding-right: 10px;
+}
+
+p.user-name{
+    font-family: "Open Sans";
+    color: #2E4453;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+
+/* index.php */
+
+ul#tab li{
+    /* width: 20%;*/ 
+}
+
+div.tab-content{
+    padding-top: 30px;
+    background: white;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+div.tab-content table{
+    margin-bottom: 0;
+}
+
+
+div#tab-content tr:nth-of-type(2n+1){
+    background-color: #eee;  
+}
+
+div.tab-content table tr td:last-child div button{
+    width: 100%;
+}
+
+
+

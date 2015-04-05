@@ -16,7 +16,7 @@ class add extends MySQL{
 
 		$dbh = $this->connectDB();
 
-		$sql = "insert into news2(title, content, created, modified) values(:title, :content, now(), now())";
+		$sql = "insert into `2015`(title, content, created, modified) values(:title, :content, now(), now())";
 		$stmt = $dbh->prepare($sql);
 		$params = array(
 			":title" => $this->title,

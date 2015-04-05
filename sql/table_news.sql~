@@ -5,7 +5,7 @@ create table `2015` (
 	author varchar(20),
 	created datetime default null,
 	modified datetime default null
-) CHARACTER SET 'utf8';
+) CHARACTER SET 'utf8-general-ci';
 
 insert into `2015` (title, content, author, created, modified) values
 ('ラーメン二郎の本店に行きました!', 'content 1', 'T.W', now(), now()); 
