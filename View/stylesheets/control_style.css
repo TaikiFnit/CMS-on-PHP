@@ -134,6 +134,11 @@ p.user-name{
     margin: 0;
 }
 
+/* login.php */
+button#send{
+    width: 100%;
+}
+
 /* index.php */
 
 ul#tab li{

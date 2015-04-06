@@ -16,7 +16,6 @@ $index = $controller->index();
 	<meta charset="utf-8">
 	<title>Control Panel - Add</title>        
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="components/jquery-ui/jquery-ui.css">
     <link rel="stylesheet" href="stylesheets/control_style.css">
     <link rel="stylesheet" href="components/bootstrap/css/bootstrap.min.css">
 </head>
@@ -40,7 +39,7 @@ $index = $controller->index();
             
             <div class="col-sm-9">
         
-                <form action="http://localhost/control/Controller/PostsController.php" method="POST" class="">
+                <form action="../Controller/PostsController.php" method="POST" class="">
                     <div class="form-group">
                         <input type="text" name="title" id="formTitle" class="form-control" placeholder="Title">
                     </div>
@@ -60,7 +59,6 @@ $index = $controller->index();
     </main>
     
     <script src="components/jquery/jquery.js"></script>
-    <script src="components/jquery-ui/jquery-ui.js"></script>
     <script src="components/bootstrap/js/bootstrap.js"></script>
     <script src="javascripts/control_script.js"></script>
 </body>
