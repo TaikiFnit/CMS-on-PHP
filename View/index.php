@@ -50,7 +50,7 @@ $controller = new ExtractsController();
                         
                         <?php
                             // output table contents
-                            $fnit = $controller->index_helper();
+                            $fnit = $controller->index_helper(2015);
                             echo $fnit;
                         ?>
 

@@ -16,7 +16,7 @@ class ExtractsController {
         return $index->execute();
     }
 
-    public function index_helper(){
+    public function index_helper($active){
 
     	$index = $this->index();
 
@@ -24,10 +24,8 @@ class ExtractsController {
 
     	$code = "";
 
-    	var_dump($index);
-
     	foreach($index as $year => $list){
-                
+
             if($year == $active){                    
                 $code .= "<div id='news".$year."' class='tab-pane active'>";
             }
@@ -37,7 +35,7 @@ class ExtractsController {
             $code .= "<table role='tabpanel' class='table table-striped'>";
             $code .= "<tbody>";
             $code .= "<tr><th>ID</th><th>Title</th><th>Author</th><th>Created at</th><th>&nbsp;</th></tr>";
-         
+
             for($i = 0; $i < count($list); $i++){
                 $code .= "<tr>";
                 for($j = 0; $j < 4; $j++){
@@ -63,10 +61,9 @@ class ExtractsController {
             $code .= "</tbody>";
             $code .= "</table>";                
             $code .= "</div>";                
-
-            return $code;
         }
 
+        return $code;
     }
 }
 

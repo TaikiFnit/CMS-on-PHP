@@ -1,4 +1,4 @@
-create table `2012` (
+create table `2013` (
 	id int not null auto_increment primary key,
 	title varchar(50),
 	content text,
@@ -7,5 +7,5 @@ create table `2012` (
 	modified datetime default null
 ) CHARACTER SET 'utf8';
 
-insert into `2012` (title, content, author, created, modified) values
-('2012 news 03', 'content 1', '2012', now(), now()); 
+insert into `2013` (title, content, author, created, modified) values
+('2013 news 03', 'content 1', '2013', now(), now()); 
