@@ -41,12 +41,24 @@ $index = $controller->index();
         
                 <form action="../Controller/PostsController.php" method="POST" class="">
                     <div class="form-group">
+                        <label for="formTitle">Title:</label>
                         <input type="text" name="title" id="formTitle" class="form-control" placeholder="Title">
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+	                        <label for="formAuthor">Author:</label>
+	                        <input type="text" name="author" id="formAuthor" class="form-control" placeholder="Author">
+                        </div>
+                        <div class="form-group col-xs-6">
+	                        <label for="formDate">Date:</label>
+	                        <input type="date" name="date" id="formDate" class="form-control" value="<?php echo date('Y-m-d', time() ); ?>">
+                        </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="formContent">Content:</label>
-                        <textarea name="content" id="formContent" class="form-control" rows="10"></textarea>
+                        <textarea name="content" id="formContent" class="form-control" rows="15"></textarea>
                     </div>
 
                     <div class="form-group">

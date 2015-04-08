@@ -24,7 +24,6 @@ class indexModel extends MySQL{
             $table_list[$tableName["Tables_in_".DB_NAME]] = $stmt->fetchAll();        
         }
 
-
         $dbh = null;
         
         return $table_list;

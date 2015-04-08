@@ -3,11 +3,14 @@
 require_once('../Model/PostsModel.php');
 
 $action = $_POST['action'];
-$title = $_POST['title'];
-$content = $_POST['content'];
+$body['title'] = $_POST['title'];
+$body['content'] = $_POST['content'];
+$body['author'] = $_POST['author'];
+$body['date'] = $_POST['date'];
 
 if($action == "add") {
-	$add = new add($title, $content);	
+	
+	$add = new add($body);	
 
 	$add->execute();
 

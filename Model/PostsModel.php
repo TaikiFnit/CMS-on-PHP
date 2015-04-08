@@ -4,23 +4,24 @@ require_once('mysql.php');
 
 // データベースに記事を挿入するclass
 class add extends MySQL{
-	private $title;
-	private $content;
+	private $body;
+	private $tableName;
 
-	public function __construct($t, $c) {
-		$this->title = $t;
-		$this->content = $c;
+	public function __construct($b) {
+		$this->body = $b;
+		$this->tableName = date("Y", strtotime( $b['date'] ) );
 	}
     
-	public function execute(){
+	public function execute(){		
+		$dbh = $this -> connectDB();
 
-		$dbh = $this->connectDB();
-
-		$sql = "insert into `2015`(title, content, created, modified) values(:title, :content, now(), now())";
+		$sql = "insert into `" . $this -> tableName . "`(title, content, author, created, modified) values(:title, :content, :author, :crated, now())";
 		$stmt = $dbh->prepare($sql);
 		$params = array(
-			":title" => $this->title,
-			":content" => $this->content,
+			":title" => $this -> body['title'],
+			":content" => $this -> body['content'],
+			":author" => $this -> body['author'],
+			":crated" => $this -> body['date']
 		);
 
 		$stmt->execute($params);

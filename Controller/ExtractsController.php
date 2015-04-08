@@ -20,8 +20,6 @@ class ExtractsController {
 
     	$index = $this->index();
 
-    	$active = 2015;
-
     	$code = "";
 
     	foreach($index as $year => $list){
