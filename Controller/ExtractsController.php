@@ -4,10 +4,6 @@ require_once('../Model/ExtractsModel.php');
 
 class ExtractsController {
     
-    public function __construct() {
-        
-    }
-    
     // 記事の一覧を引っ張ってきてそれを返す
     public function index() {
         
@@ -16,6 +12,15 @@ class ExtractsController {
         return $index->execute();
     }
 
+    // 引数として渡された年、idの記事の情報を返す
+    public function view($year, $id) {
+
+        $view = new viewModel($year, $id);
+
+        return $view->execute();
+    }
+
+    // controller/View/index.phpのtableを生成するヘルパー関数
     public function index_helper($active){
 
     	$index = $this->index();
@@ -42,12 +47,13 @@ class ExtractsController {
                     $code .= "</td>";
                 }
                 $code .= "<td>";
+
                 $code .= "<div class='btn-group btn-group-xs col-xs-12' role='group'>
                     <button class='btn btn-default dropdown-toggle' data-toggle='dropdown'><span class='caret'></span></button>
                     <ul class='dropdown-menu'>
                         <li><a href=''><span class='glyphicon glyphicon-eye-open'></span>View</a></li>
                         <li class='divider'></li>
-                        <li><a href=''><span class='glyphicon glyphicon-pencil'></span>Edit</a></li>
+                        <li><a href='./edit.php?year=".$year."&id=".$list[$i]["id"]."'><span class='glyphicon glyphicon-pencil'></span>Edit</a></li>
                         <li class='divider'></li>
                         <li><a href=''><span class='glyphicon glyphicon-remove'></span>Delete</a></li>
                     </ul>        

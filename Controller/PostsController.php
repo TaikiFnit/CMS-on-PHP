@@ -2,26 +2,23 @@
 
 require_once('../Model/PostsModel.php');
 
-$action = $_POST['action'];
-$body['title'] = $_POST['title'];
-$body['content'] = $_POST['content'];
-$body['author'] = $_POST['author'];
-$body['date'] = $_POST['date'];
+$action = $_POST["action"];
+
+$model = new PostsModel($_POST);
 
 if($action == "add") {
-	
-	$add = new add($body);	
 
-	$add->execute();
-
-	header('Location: '.SITE_URL.'/View/index.php');
-	exit;
+	$model->add();
 }
 
 if($action == "edit") {
-
+	
+	$model->edit();	
 }
 
 if($action == "delete") {
 
 }
+
+header('Location: '.SITE_URL.'/View/index.php');
+exit;
