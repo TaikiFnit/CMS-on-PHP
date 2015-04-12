@@ -2,7 +2,10 @@ Todo.txt
 
 ・indexhelperの引数（適当）
 ・delete実装 - ok
-・indexのタブを自動生成
+・indexのタブを自動生成 - ok
 ・DBControl機能実装
 ・画像のpost実装
 ・ログイン機能実装(上記の後でいい)
+
+画像のpost, ログイン機能実装のためには新しいtableを作成する必要がある
+∴fetch_tables関数で上記のtableをfetchしないようにする必要がある

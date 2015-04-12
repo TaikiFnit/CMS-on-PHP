@@ -33,6 +33,3 @@ create table `2012` (
 	created date default null,
 	modified date default null
 ) CHARACTER SET 'utf8';
-
-insert into `2015` (title, content, author, created, modified) values
-('2015 news 01', 'content 1', '2015', now(), now()); 
