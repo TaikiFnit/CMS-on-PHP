@@ -39,6 +39,9 @@ $controller = new ExtractsController();
                 <div role="tabpanel">
                         
                     <ul id="tab" class="nav nav-tabs" role="tablist">
+                        <?php
+                            echo $controller->tab_helper(2015);
+                        ?>
                         <li role="presentation" class="active"><a href="#news2015" aria-controls="news2015" role="tab" data-toggle="tab">2015年</a></li>    
                         <li role="presentation"><a href="#news2014" aria-controls="news2014" role="tab" data-toggle="tab">2014年</a></li>    
                         <li role="presentation"><a href="#news2013" aria-controls="news2013" role="tab" data-toggle="tab">2013年</a></li>    
@@ -50,8 +53,7 @@ $controller = new ExtractsController();
                         
                         <?php
                             // output table contents
-                            $fnit = $controller->index_helper(2015);
-                            echo $fnit;
+                            echo $controller->table_helper(2015);
                         ?>
 
                     </div>

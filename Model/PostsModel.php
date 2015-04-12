@@ -47,6 +47,21 @@ class PostsModel extends MySQL{
 
 		$dbh = null;
 	}
+
+	public function delete() {
+
+		$dbh = $this->connectDB();
+
+		$sql = "delete from `".$this->tableName."` where id=:id";
+
+		$stmt = $dbh->prepare($sql);
+
+		$stmt->bindParam(":id", $this->id);
+
+		$stmt->execute();
+
+		$dbh = null;
+	}
 }
 
 ?>

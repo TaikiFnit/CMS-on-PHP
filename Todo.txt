@@ -1,0 +1,8 @@
+Todo.txt
+
+・indexhelperの引数（適当）
+・delete実装 - ok
+・indexのタブを自動生成
+・DBControl機能実装
+・画像のpost実装
+・ログイン機能実装(上記の後でいい)

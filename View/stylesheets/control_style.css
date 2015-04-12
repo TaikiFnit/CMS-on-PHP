@@ -172,5 +172,31 @@ div.tab-content table tr td:last-child div button{
     width: 100%;
 }
 
+/* delete.php */
 
+form.deleteForm{
+    background: white;
+    padding-bottom: 60px;
+}
+
+form.deleteForm h2{
+    margin: 0;
+    padding:20px;
+    font-weight: bold;
+}
+
+form.deleteForm p{
+    padding: 0 0 30px 30px;
+    font-size: 22px;
+    border-bottom: 1px solid #ddd;
+}
+
+form.deleteForm dl{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+form.deleteForm dl dt, form.deleteForm dl dd{
+    line-height: 2;
+}
 
