@@ -13,18 +13,4 @@ class MySQL {
             exit;
         }
     }
-    
-    protected function fetchTables() {
-        
-        $dbh = $this->connectDB();
-
-		$sql = "show tables from ".DB_NAME;
-		$stmt = $dbh->prepare($sql);
-
-		$stmt->execute();
-        
-        $dbh = null;
-        
-        return $stmt->fetchAll();
-    }
 }

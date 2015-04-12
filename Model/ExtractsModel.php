@@ -3,13 +3,23 @@
 require_once('mysql.php');
 
 // データベースに記事を挿入するclass
-class indexModel extends MySQL{
+class ExtractsModel extends MySQL{
 
-	public function __construct() {
+    public function fetchTables() {
+        
+        $dbh = $this->connectDB();
 
-	}
-    
-	public function execute(){
+        $sql = "show tables from ".DB_NAME;
+        $stmt = $dbh->prepare($sql);
+
+        $stmt->execute();
+        
+        $dbh = null;
+        
+        return $stmt->fetchAll();
+    }
+
+	public function index(){
     
         $dbh = $this->connectDB();
         
@@ -32,30 +42,20 @@ class indexModel extends MySQL{
         
         return $table_list;
     }
-}
 
-class viewModel extends MySQL{
+    public function view($year, $id){
 
-    private $year;
-    private $id;
-
-    public function __construct($y, $i) {
-        $this->year = $y;
-        $this->id = $i;
-    }
-
-    public function execute() {
         $dbh = $this->connectDB();
 
-        $sql = "select * from `".$this->year."` where id=:id;";
+        $sql = "select * from `".$year."` where id=:id;";
         $stmt = $dbh->prepare($sql);
 
-        $stmt->bindParam(':id', $this->id);
+        $stmt->bindParam(':id', $id);
 
         $stmt->execute();
+
+        $dbh = null
 
         return $stmt->fetch();
     }
 }
-
-?>

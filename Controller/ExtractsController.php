@@ -3,28 +3,48 @@
 require_once('../Model/ExtractsModel.php');
 
 class ExtractsController {
+
+    private $model;
+
+    public function __constract(){
+
+        $this->model = new ExtractsModel();
+    }
     
     // 記事の一覧を引っ張ってきてそれを返す
     public function index() {
-        
-        $index = new indexModel();
-        
-        return $index->execute();
+
+        return $this->model->index();
     }
 
     // 引数として渡された年、idの記事の情報を返す
     public function view($year, $id) {
 
-        $view = new viewModel($year, $id);
+        return $this->model->view($year, $id);
+    }
 
-        return $view->execute();
+    // MySQL classより継承 : DBのTable Listを返す
+    public function tables(){
+
+        return $this->model->fetchTables();
     }
 
     public function tab_helper($active){
 
-        $index = $this->index();{
-            
+        $tables = $this->tables();
+        return $tables;
+
+        foreach($tables as $table) {
+            $code .= $table;
         }
+/*
+        <li role="presentation" class="active"><a href="#news2015" aria-controls="news2015" role="tab" data-toggle="tab">2015年</a></li>    
+        <li role="presentation"><a href="#news2014" aria-controls="news2014" role="tab" data-toggle="tab">2014年</a></li>    
+        <li role="presentation"><a href="#news2013" aria-controls="news2013" role="tab" data-toggle="tab">2013年</a></li>    
+        <li role="presentation"><a href="#news2012" aria-controls="news2012" role="tab" data-toggle="tab">2012年</a></li>
+        <li role="presentetion"><a href="" data-toggle="tooltip-top" title="New Table."><span class="glyphicon glyphicon-plus"></span></a></li>
+*/
+        
     }
 
     // controller/View/index.phpのtableを生成するヘルパー関数
