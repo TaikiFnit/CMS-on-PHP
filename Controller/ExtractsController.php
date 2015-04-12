@@ -6,7 +6,7 @@ class ExtractsController {
 
     private $model;
 
-    public function __constract(){
+    public function __construct(){
 
         $this->model = new ExtractsModel();
     }
@@ -30,21 +30,21 @@ class ExtractsController {
     }
 
     public function tab_helper($active){
-
         $tables = $this->tables();
-        return $tables;
 
         foreach($tables as $table) {
-            $code .= $table;
-        }
-/*
-        <li role="presentation" class="active"><a href="#news2015" aria-controls="news2015" role="tab" data-toggle="tab">2015年</a></li>    
-        <li role="presentation"><a href="#news2014" aria-controls="news2014" role="tab" data-toggle="tab">2014年</a></li>    
-        <li role="presentation"><a href="#news2013" aria-controls="news2013" role="tab" data-toggle="tab">2013年</a></li>    
-        <li role="presentation"><a href="#news2012" aria-controls="news2012" role="tab" data-toggle="tab">2012年</a></li>
-        <li role="presentetion"><a href="" data-toggle="tooltip-top" title="New Table."><span class="glyphicon glyphicon-plus"></span></a></li>
-*/
         
+            $year = $table["Tables_in_CMS"];
+
+            if($year == $active){
+                $code .=  "<li role='presentation' class='active'><a href='#news".$year."' aria-controls='news".$year."' role='tab' data-toggle='tab'>".$year."年</a></li>";                
+            } 
+            else {
+                $code .=  "<li role='presentation'><a href='#news".$year."' aria-controls='news".$year."' role='tab' data-toggle='tab'>".$year."年</a></li>";    
+            }
+        }
+
+        return $code;
     }
 
     // controller/View/index.phpのtableを生成するヘルパー関数

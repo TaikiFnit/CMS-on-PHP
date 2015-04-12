@@ -54,7 +54,7 @@ class ExtractsModel extends MySQL{
 
         $stmt->execute();
 
-        $dbh = null
+        $dbh = null;
 
         return $stmt->fetch();
     }

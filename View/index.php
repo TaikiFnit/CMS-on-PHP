@@ -2,7 +2,7 @@
 
 require_once('../Controller/ExtractsController.php');
 
-///$controller = new ExtractsController();
+$controller = new ExtractsController();
 
 ?>
 
@@ -40,7 +40,7 @@ require_once('../Controller/ExtractsController.php');
                         
                     <ul id="tab" class="nav nav-tabs" role="tablist">
                         <?php
-                            //echo $controller->tab_helper(2015);
+                            echo $controller->tab_helper(2015);
                         ?>
                     </ul>
                         
@@ -48,7 +48,7 @@ require_once('../Controller/ExtractsController.php');
                         
                         <?php
                             // output table contents
-                            //echo $controller->table_helper(2015);
+                            echo $controller->table_helper(2015);
                         ?>
 
                     </div>
