@@ -4,6 +4,9 @@ require_once('../Model/PostsModel.php');
 
 $action = $_POST["action"];
 
+var_dump($_POST);
+exit;
+
 $model = new PostsModel($_POST);
 
 if($action == "add") {

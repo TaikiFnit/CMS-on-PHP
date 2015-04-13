@@ -8,4 +8,4 @@ Todo.txt
 ・ログイン機能実装(上記の後でいい)
 
 画像のpost, ログイン機能実装のためには新しいtableを作成する必要がある
-∴fetch_tables関数で上記のtableをfetchしないようにする必要がある
+∴fetch_tables関数で上記のtableをfetchしないようにする必要がある - ok

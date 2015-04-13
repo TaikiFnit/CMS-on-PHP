@@ -9,7 +9,7 @@ class helpers extends ExtractsController{
 
         foreach($tables as $table) {
         
-            $year = $table["Tables_in_CMS"];
+            $year = $table["Tables_in_".DB_NAME." (".TABLE_KEYWORD.")"];
 
             if($year == $active){
 

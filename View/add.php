@@ -27,7 +27,7 @@
             
             <div class="col-sm-9">
         
-                <form action="../Controller/PostsController.php" method="POST" class="">
+                <form action="../Controller/PostsController.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="formTitle">Title:</label>
                         <input type="text" name="title" id="formTitle" class="form-control" placeholder="Title">
@@ -47,6 +47,14 @@
                     <div class="form-group">
                         <label for="formContent">Content:</label>
                         <textarea name="content" id="formContent" class="form-control" rows="15"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="image1">
+                        <label for="imageInput1">Image 1:</label>
+                        <input type="file" name="file1" id="imageInput1">
+                        </div>
+                        <p class="help-block">You can insert images to DB. <span id="addForm"><button type="button" class="btn btn-link">Add form</button></span></p>
                     </div>
 
                     <div class="form-group">

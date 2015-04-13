@@ -9,7 +9,8 @@ class ExtractsModel extends MySQL{
         
         $dbh = $this->connectDB();
 
-        $sql = "show tables from ".DB_NAME;
+        $sql = "show tables from ".DB_NAME." like '".TABLE_KEYWORD."';";
+
         $stmt = $dbh->prepare($sql);
 
         $stmt->execute();
@@ -27,7 +28,7 @@ class ExtractsModel extends MySQL{
         
         foreach($tables as $tableName){
 
-            $tn = $tableName["Tables_in_".DB_NAME];
+            $tn = $tableName["Tables_in_".DB_NAME." (".TABLE_KEYWORD.")"];
 
             $sql = "select id, title, author, created from `" . $tn . "`";
 
